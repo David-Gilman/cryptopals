@@ -1,4 +1,4 @@
-from binascii import unhexlify, hexlify
+from binascii import unhexlify
 
 
 def score_text(inp):
@@ -28,7 +28,7 @@ def xor_breaker(inp):
 
 
 def cipher_parser(path):
-    f = file = open(path, "r")
+    f = open(path, "r")
     lines = {}
     for line in f:
         line = line.strip()
