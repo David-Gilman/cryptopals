@@ -1,2 +1,2 @@
-# cyrptopals
-My Python solutions for cryptopals thus far
+# Cryptopals
+My Python 3 solutions for cryptopals thus far
