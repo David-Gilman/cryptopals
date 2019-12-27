@@ -1,5 +1,4 @@
-from binascii import unhexlify, hexlify
-import base64
+from binascii import unhexlify
 
 
 def strxor(s1, s2):
@@ -7,7 +6,7 @@ def strxor(s1, s2):
     bytes2 = unhexlify(s2)
     b = b""
     for c1, c2 in zip(bytes1, bytes2):
-        b += bytes([c1^c2])
+        b += bytes([c1 ^ c2])
     return b.hex()
 
 
