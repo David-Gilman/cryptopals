@@ -2,15 +2,12 @@ from Crypto.Cipher import AES
 import base64
 
 
-def main():
-    key = b"YELLOW SUBMARINE"
+def decrypt_aes_ecb(key: bytes, cipher_text: bytes) -> bytes:
     cipher = AES.new(key, AES.MODE_ECB)
-    text_file = "S01C07input.txt"
-    encrypted_file = open(text_file, "r").read()
-    encrypted_data = base64.b64decode(encrypted_file)
-    clear_data = cipher.decrypt(encrypted_data)
-    print(clear_data.decode("utf-8"))
+    return cipher.decrypt(cipher_text)
 
 
-if __name__ == '__main__':
-    main()
+encrypted_file = open("7.txt", "r").read()
+encrypted_data = base64.b64decode(encrypted_file)
+final = decrypt_aes_ecb(b"YELLOW SUBMARINE", encrypted_data)
+print(final.decode("utf-8"))

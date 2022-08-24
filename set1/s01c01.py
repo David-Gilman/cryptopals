@@ -1,10 +1,8 @@
-from binascii import unhexlify
-import base64
+from base64 import b64encode
 
 
-def hex_to_str(s):
-	bytes = unhexlify(s)
-	return base64.b64encode(bytes)
+def hex_to_b64(hexed: hex) -> bytes:
+	some_bytes = bytes.fromhex(hexed)
+	return b64encode(some_bytes)
 
-
-print(hex_to_str("49276d206b696c6c696e6720796f757220627261696e206c696b65206120706f69736f6e6f7573206d757368726f6f6d"))
+assert hex_to_b64("49276d206b696c6c696e6720796f757220627261696e206c696b65206120706f69736f6e6f7573206d757368726f6f6d") == b'SSdtIGtpbGxpbmcgeW91ciBicmFpbiBsaWtlIGEgcG9pc29ub3VzIG11c2hyb29t'
