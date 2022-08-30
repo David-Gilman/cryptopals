@@ -12,5 +12,6 @@ def find_aes_cbc(file_name: str) -> str:
                     return line
 
 
-cbc_line = find_aes_cbc('8.txt')
-print(cbc_line)
+if __name__ == "__main__":
+    cbc_line = find_aes_cbc('8.txt')
+    print(cbc_line)

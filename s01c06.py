@@ -61,12 +61,13 @@ def vigenere_breaker(cipher_text):
     return [bytes(c, 'utf-8') for c in keys]
 
 
-assert byte_hamming(b'this is a test', b'wokka wokka!!!') == 37
+if __name__ == "__main__":
+    assert byte_hamming(b'this is a test', b'wokka wokka!!!') == 37
 
-file = open("6.txt", "r")
-data = base64.b64decode(file.read())
-key_candidates = vigenere_breaker(data)
-f_key, final_plain_text = _key_finder(key_candidates, data)
+    file = open("6.txt", "r")
+    data = base64.b64decode(file.read())
+    key_candidates = vigenere_breaker(data)
+    f_key, final_plain_text = _key_finder(key_candidates, data)
 
-print(f_key.decode('utf-8') + '\n')
-print(final_plain_text.decode('utf-8'))
+    print(f_key.decode('utf-8') + '\n')
+    print(final_plain_text.decode('utf-8'))

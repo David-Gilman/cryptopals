@@ -11,4 +11,5 @@ def cipher_parser(path: str) -> str:
     return max(lines, key=lines.get)
 
 
-assert cipher_parser("4.txt") == "Now that the party is jumping\n"
+if __name__ == "__main__":
+    assert cipher_parser("4.txt") == "Now that the party is jumping\n"
